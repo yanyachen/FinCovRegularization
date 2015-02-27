@@ -13,6 +13,6 @@ Depends: R (>= 2.10)
 Imports: quadprog
 License: GPL-2
 LazyData: true
-Packaged: 2015-02-27 03:36:17 UTC; Administrator
+Packaged: 2015-02-27 08:04:48 UTC; Administrator
 Author: Yachen Yan [aut, cre]
 Maintainer: Yachen Yan <yanyachen21@gmail.com>
