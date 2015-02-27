@@ -1,0 +1,18 @@
+Package: FinCovRegularization
+Type: Package
+Title: Covariance Matrix Estimation and Regularization for Finance
+Version: 1.0.0
+Authors@R: person("Yachen", "Yan", email = "yanyachen21@gmail.com", role = c("aut", "cre"))
+Description: This is a package providing three categories of important functions for statistical analysis of financial data: 
+    including portfolio optimization: global mimnum variance portfolio, risk parity portfolio; 
+    covariance estimation: through macroeconomic, fundamental, and statistical factor model; 
+    and covariance regularization: banding, tapering, thresholding and corresponding cross-validation for parameter selection. 
+URL: http://github.com/yanyachen/FinCovRegularization
+BugReports: http://github.com/yanyachen/FinCovRegularization/issues
+Depends: R (>= 2.10)
+Imports: quadprog
+License: GPL-2
+LazyData: true
+Packaged: 2015-02-27 03:36:17 UTC; Administrator
+Author: Yachen Yan [aut, cre]
+Maintainer: Yachen Yan <yanyachen21@gmail.com>
