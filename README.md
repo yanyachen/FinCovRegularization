@@ -1,5 +1,7 @@
 # FinCovRegularization
 
+[![Build Status](https://travis-ci.org/yanyachen/FinCovRegularization.svg)](https://travis-ci.org/yanyachen/FinCovRegularization)
+
 Covariance Matrix Estimation and Regularization for Finance  
 
 This is a package providing three categories of important functions for statistical analysis of financial data, including:  
