@@ -35,4 +35,15 @@ banding covariance matrix using grid search strategy
 For cross-validation, this function split the sample randomly into
 two pieces of size n1 = n-n/log(n) and n2 = n/log(n), and repeat this k times
 }
+\examples{
+data(m.excess.c10sp9003)
+retcov.cv <- banding.cv(m.excess.c10sp9003, n.cv = 10,
+                        norm = "F", seed = 142857)
+summary(retcov.cv)
+plot(retcov.cv)
+# Low dimension
+}
+\references{
+"High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+}
 

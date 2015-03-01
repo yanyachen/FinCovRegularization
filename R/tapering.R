@@ -8,6 +8,10 @@
 #' @param h the ratio between taper l_h and parameter l
 #' @return a regularized covariance matrix after tapering operation
 #' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+#' @examples
+#' data(m.excess.c10sp9003)
+#' cov.SAM <- cov(m.excess.c10sp9003)
+#' tapering(cov.SAM, l=7, h = 1/2)
 #' @export
 
 tapering <- function(sigma, l, h=1/2){

@@ -18,6 +18,11 @@ a regularized covariance matrix after soft-thresholding operation
 Apply soft-thresholding operator on a covariance matrix with
 a soft-thresholding parameter.
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+soft.thresholding(cov.SAM, threshold = 0.001)
+}
 \references{
 "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
 }

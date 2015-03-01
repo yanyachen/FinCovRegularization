@@ -18,5 +18,8 @@ minimum constant for thresholding
 This function is for determining the minimum constant in the threshold
 that guarantees the positive definiteness of the estimator.
 }
+\references{
+"High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+}
 \keyword{internal}
 

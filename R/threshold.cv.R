@@ -29,6 +29,14 @@
 #'   \item{norm}{the norm used to measure the cross-validation error}
 #'   \item{seed}{random seed}
 #'   \item{threshold.grid}{thresholding values tested in cross-validation}
+#' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+#' @examples
+#' data(m.excess.c10sp9003)
+#' retcov.cv <- threshold.cv(m.excess.c10sp9003, method = "hard", 
+#'                           thresh.len = 20, n.cv = 10, norm = "F", seed = 142857)
+#' summary(retcov.cv)
+#' plot(retcov.cv)
+#' # Low dimension
 #' @export
 
 threshold.cv <- function(matrix, method="hard", thresh.len=20, n.cv=10, norm="F", seed=142857){

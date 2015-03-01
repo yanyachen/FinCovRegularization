@@ -22,6 +22,14 @@
 #'   \item{n.cv}{times that cross-validation repeated}
 #'   \item{norm}{the norm used to measure the cross-validation error}
 #'   \item{seed}{random seed}
+#' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+#' @examples
+#' data(m.excess.c10sp9003)
+#' retcov.cv <- banding.cv(m.excess.c10sp9003, n.cv = 10, 
+#'                         norm = "F", seed = 142857)
+#' summary(retcov.cv)
+#' plot(retcov.cv)
+#' # Low dimension
 #' @export
 
 banding.cv <- function(matrix, n.cv=10, norm="F", seed=142857){

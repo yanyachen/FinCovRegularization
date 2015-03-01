@@ -7,12 +7,12 @@
 \title{FinCovRegularization: Covariance Matrix Estimation and Regularization
   for Finance}
 \description{
-This is a package providing three categories of important functions for
-statistical analysis of financial data: including portfolio optimization:
-global mimnum variance portfolio, risk parity portfolio;
-covariance estimation: macroeconomic, fundamental, and
-statistical factor model; covariance regularization: banding,
-tapering, thresholding and corresponding cross-validation
-for parameter selection
+Estimation and regularization for covariance matrix of asset returns.
+For covariance matrix estimation, three major types of factor models are
+included: macroeconomic factor model, fundamental factor model and
+statistical factor model. For covariance matrix regularization,
+four regularized estimators are included: banding, tapering,
+hard-thresholding and soft-thresholding. The tuning parameters of these
+regularized estimators are selected via cross-validation.
 }
 

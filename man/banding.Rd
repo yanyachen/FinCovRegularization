@@ -17,6 +17,11 @@ a regularized covariance matrix after banding operation
 \description{
 Apply banding operator on a covariance matrix with a banding parameter.
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+banding(cov.SAM, 7)
+}
 \references{
 "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
 }

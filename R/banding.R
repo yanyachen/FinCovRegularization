@@ -7,6 +7,10 @@
 #' @param k banding parameter
 #' @return a regularized covariance matrix after banding operation
 #' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+#' @examples
+#' data(m.excess.c10sp9003)
+#' cov.SAM <- cov(m.excess.c10sp9003)
+#' banding(cov.SAM, 7)
 #' @export
 
 banding <- function(sigma, k=0){

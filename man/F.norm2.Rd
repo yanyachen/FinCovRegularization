@@ -15,4 +15,9 @@ a scalar of the squared Frobenius norm
 \description{
 Calculate the squared Frobenius norm of a matrix
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+F.norm2(cov.SAM)
+}
 

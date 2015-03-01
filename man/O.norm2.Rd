@@ -15,4 +15,9 @@ a scalar of the squared Operator norm
 \description{
 Calculate the squared Operator norm of a matrix
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+O.norm2(cov.SAM)
+}
 

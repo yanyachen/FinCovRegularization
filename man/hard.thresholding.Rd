@@ -18,6 +18,11 @@ a regularized covariance matrix after hard-thresholding operation
 Apply hard-thresholding operator on a covariance matrix with
 a hard-thresholding parameter.
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+hard.thresholding(cov.SAM, threshold = 0.001)
+}
 \references{
 "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
 }

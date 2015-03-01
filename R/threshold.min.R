@@ -7,6 +7,7 @@
 #' @param sigma a covariance matrix
 #' @param method a character, indicating thresholding method: "soft" or "hard"
 #' @return minimum constant for thresholding
+#' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
 #' @keywords internal
 #' @export
 

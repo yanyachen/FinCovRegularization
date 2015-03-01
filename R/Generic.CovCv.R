@@ -12,7 +12,7 @@ summary.CovCv <- function(object, ...){
   cat(object$n.cv, "times Cross-Validation repeated for", 
       object$regularization, "parameter selection \n")
   cat("Optimal Parameter Value:", object$parameter.opt, "\n")
-  if(object$regularization=="Thresholding"){
+  if(object$regularization %in% c("Hard Thresholding", "Soft Thresholding")){
     cat("Thresholding Method: ", 
         paste(object$method, "thresholding", sep=" "), "\n")
   }
@@ -40,7 +40,7 @@ plot.CovCv <- function(x, ...){
   }else if(x$regularization=="Tapering"){
     plot(x=0:(length(x$cv.error)-1), y=x$cv.error, 
          type="l", xlab="l.grid", ylab="cv.error")
-  }else if(x$regularization=="Thresholding"){
+  }else if(x$regularization %in% c("Hard Thresholding", "Soft Thresholding")){
     plot(x=x$threshold.grid, y=x$cv.error, 
          type="l", xlab="threshold.grid", ylab="cv.error")
   }

@@ -8,6 +8,10 @@
 #' @param threshold soft-thresholding parameter
 #' @return a regularized covariance matrix after soft-thresholding operation
 #' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
+#' @examples
+#' data(m.excess.c10sp9003)
+#' cov.SAM <- cov(m.excess.c10sp9003)
+#' soft.thresholding(cov.SAM, threshold = 0.001)
 #' @export
 
 soft.thresholding <- function(sigma, threshold=0.5){

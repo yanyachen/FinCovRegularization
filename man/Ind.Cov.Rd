@@ -15,4 +15,9 @@ a regularized covariance matrix after applying independence model
 \description{
 Apply independence model on a covariance matrix.
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+Ind.Cov(cov.SAM)
+}
 

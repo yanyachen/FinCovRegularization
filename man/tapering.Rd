@@ -19,6 +19,11 @@ a regularized covariance matrix after tapering operation
 \description{
 Apply tapering operator on a covariance matrix with tapering parameters.
 }
+\examples{
+data(m.excess.c10sp9003)
+cov.SAM <- cov(m.excess.c10sp9003)
+tapering(cov.SAM, l=7, h = 1/2)
+}
 \references{
 "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
 }
