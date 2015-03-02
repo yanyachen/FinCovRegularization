@@ -14,12 +14,12 @@ banding, tapering, hard-thresholding, soft-thresholding
 global mimnum variance portfolio, risk parity portfolio  
 
 To install:  
-* the stable version from [CRAN](http://cran.r-project.org/web/packages/FinCovRegularization/index.html):
+* the stable version from [CRAN](http://cran.r-project.org/web/packages/FinCovRegularization/index.html):  
 ```r
 install.packages("FinCovRegularization")
 ```
 
-* the latest development version:
+* the latest development version:  
 ```r
 devtools::install_github("yanyachen/FinCovRegularization")
 ```
