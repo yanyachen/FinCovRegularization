@@ -11,4 +11,11 @@ Estimation and regularization for covariance matrix of asset returns. For covari
 * portfolio optimization: global mimnum variance portfolio, risk parity portfolio  
 
 To install:  
-* the latest development version: `devtools::install_github("yanyachen/FinCovRegularization")`
+* the latest development version:
+```r
+devtools::install_github("yanyachen/FinCovRegularization")
+```
+* the stable version from [CRAN](http://cran.r-project.org/web/packages/FinCovRegularization/index.html):
+```r
+install.packages("FinCovRegularization")
+```
