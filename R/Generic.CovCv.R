@@ -31,6 +31,7 @@ summary.CovCv <- function(object, ...){
 #'
 #' @param x CovCv object to plot
 #' @param ... other arguments ignored (for compatibility with generic)
+#' @keywords internal
 #' @export
 
 plot.CovCv <- function(x, ...){
