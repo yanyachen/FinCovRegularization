@@ -11,7 +11,7 @@
 #' F.norm2(cov.SAM)
 #' @export
 
-F.norm2 <- function(matrix){
+F.norm2 <- function(matrix) {
   F2 <- norm(matrix,"F")^2
   return(F2)
 }

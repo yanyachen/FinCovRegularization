@@ -14,7 +14,7 @@
 #' hard.thresholding(cov.SAM, threshold = 0.001)
 #' @export
 
-hard.thresholding <- function(sigma, threshold=0.5){
-  sigma[(sigma!=diag(diag(sigma)))&(abs(sigma)<threshold)] <- 0
+hard.thresholding <- function(sigma, threshold = 0.5) {
+  sigma[(sigma != diag(diag(sigma))) & (abs(sigma) < threshold)] <- 0
   return(sigma)
 }

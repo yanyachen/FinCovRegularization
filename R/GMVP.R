@@ -15,18 +15,18 @@
 #' GMVP(cov(assets), short=FALSE)
 #' @export
 
-GMVP <- function(cov.mat, short=TRUE){
+GMVP <- function(cov.mat, short=TRUE) {
   n <- ncol(cov.mat)
   dvec <- matrix(0,n,1)
-  if(short==TRUE){
-    Amat <- matrix(rep(1,n),n,1)
+  if (short==TRUE) {
+    Amat <- matrix(rep(1,n), n, 1)
     bvec <- 1
-  }else if(short==FALSE){
-    Amat <- matrix(c(rep(1,n),diag(n)),n,n+1)
-    bvec <- c(1,rep(0,n))
+  } else if (short == FALSE) {
+    Amat <- matrix(c(rep(1,n),diag(n)), n, n+1)
+    bvec <- c(1, rep(0,n))
   }
   meq <- 1
-  weights <- quadprog::solve.QP(Dmat=cov.mat, dvec, Amat, bvec, meq)$solution
+  weights <- quadprog::solve.QP(Dmat = cov.mat, dvec, Amat, bvec, meq)$solution
   names(weights) <- colnames(cov.mat)
-  return(round(weights,4))
+  return(round(weights, 4))
 }

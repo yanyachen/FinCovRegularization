@@ -14,24 +14,24 @@
 #' StatFactor.Cov(assets, 3)
 #' @export
 
-StatFactor.Cov <- function(assets, k=0){
+StatFactor.Cov <- function(assets, k = 0) {
   # Sample Covariance
   N <- dim(assets)[1]
-  assets <- scale(assets, center=TRUE, scale=FALSE)
-  cov.SAM <- (N-1)^(-1)*t(assets)%*%assets
+  assets <- scale(assets, center = TRUE, scale = FALSE)
+  cov.SAM <- (N-1)^(-1) * t(assets) %*% assets
   # SVD
   decomp <- svd(assets)
-  if(k==0){
+  if (k == 0) {
     # Kaiser method
     eigenvalue <- decomp$d
-    k <- sum(eigenvalue>1)
+    k <- sum(eigenvalue > 1)
   }
   # Factor Loadings
-  beta <- (N-1)^(-1/2)*decomp$v[,1:k]%*%diag(decomp$d[1:k])
+  beta <- (N-1)^(-1/2) * decomp$v[,1:k] %*% diag(decomp$d[1:k])
   # Specific Variances
-  VarE <- diag(diag(cov.SAM - beta%*%t(beta)))
+  VarE <- diag(diag(cov.SAM - beta %*% t(beta)))
   # Computing Covariance Matrix estimated by Statistical Factor Model 
-  COV <- beta%*%t(beta)+VarE
-  dimnames(COV) <- list(colnames(assets),colnames(assets))
+  COV <- beta %*% t(beta) + VarE
+  dimnames(COV) <- list(colnames(assets), colnames(assets))
   return(COV)
 }

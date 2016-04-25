@@ -16,21 +16,21 @@
 #' MacroFactor.Cov(assets, factor)
 #' @export
 
-MacroFactor.Cov <- function(assets, factor){
+MacroFactor.Cov <- function(assets, factor) {
   n <- dim(as.matrix(factor))[1]
   m <- dim(as.matrix(factor))[2]
   # Multivariate OLS estimator factor realizations
   X1 <- cbind(1, factor)
-  beta <- solve(crossprod(X1))%*%t(X1)%*%assets
+  beta <- solve(crossprod(X1)) %*% t(X1) %*% assets
   # Compute residual covariance matrix
-  E <- assets - X1%*%beta
-  VarE <- diag(crossprod(E)/(n-m-1))
+  E <- assets - X1 %*% beta
+  VarE <- diag(crossprod(E) / (n-m-1))
   # Compute Macroeconomics Factor covariance matrix
-  if(m==1){
-    COV <- var(factor)*beta[-1,]%*%t(beta[-1,]) + diag(VarE)
+  if (m == 1) {
+    COV <- var(factor) * beta[-1,] %*% t(beta[-1,]) + diag(VarE)
   }else{
-    COV <- beta[-1,]%*%cov(factor)%*%t(beta[-1,]) + diag(VarE)
+    COV <- beta[-1,] %*% cov(factor) %*% t(beta[-1,]) + diag(VarE)
   }
-  dimnames(COV) <- list(colnames(assets),colnames(assets))
+  dimnames(COV) <- list(colnames(assets), colnames(assets))
   return(COV)
 }

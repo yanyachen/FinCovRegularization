@@ -14,21 +14,21 @@
 #' tapering(cov.SAM, l=7, h = 1/2)
 #' @export
 
-tapering <- function(sigma, l, h=1/2){
+tapering <- function(sigma, l, h = 1/2) {
   p <- ncol(sigma)
-  operator <- sigma*0
-  for(i in 1:p){
-    for(j in 1:i){
-      if(abs(i-j)<=l*h){
+  operator <- sigma * 0
+  for (i in 1:p) {
+    for (j in 1:i) {
+      if (abs(i-j) <= l*h) {
         operator[i,j] <- 1
-      }else if((l*h<abs(i-j))&(abs(i-j)<l)){
-        operator[i,j] <- 2-(abs(i-j)/(l*h)) 
-      }else{
+      } else if ((l*h < abs(i-j)) & (abs(i-j)<l)) {
+        operator[i,j] <- 2 - (abs(i-j) / (l*h)) 
+      } else {
         operator[i,j] <- 0
       }
       operator[j,i] <- operator[i,j]
     }
   }
-  sigma.tapering <- sigma*operator
+  sigma.tapering <- sigma * operator
   return(sigma.tapering)
 }

@@ -1,19 +1,27 @@
 Package: FinCovRegularization
 Type: Package
 Title: Covariance Matrix Estimation and Regularization for Finance
-Version: 1.0.0
-Authors@R: person("Yachen", "Yan", email = "yanyachen21@gmail.com", role = c("aut", "cre"))
-Description: Estimation and regularization for covariance matrix of asset returns. For covariance matrix estimation, 
-    three major types of factor models are included: macroeconomic factor model, fundamental factor model and statistical 
-    factor model. For covariance matrix regularization, four regularized estimators are included: banding, tapering, 
-    hard-thresholding and soft-thresholding. The tuning parameters of these regularized estimators are selected via 
-    cross-validation.
+Version: 1.1.0
+Authors@R: c(
+    person("YaChen", "Yan", email = "yanyachen21@gmail.com", role = c("aut", "cre")),
+    person("FangZhu", "Lin", email = "fangzhulin522@gmail.com", role = "aut")
+    )
+Description: Estimation and regularization for covariance matrix of asset
+    returns. For covariance matrix estimation, three major types of factor
+    models are included: macroeconomic factor model, fundamental factor model and
+    statistical factor model. For covariance matrix regularization, four regularized
+    estimators are included: banding, tapering, hard-thresholding and soft-
+    thresholding. The tuning parameters of these regularized estimators are selected
+    via cross-validation.
 URL: http://github.com/yanyachen/FinCovRegularization
 BugReports: http://github.com/yanyachen/FinCovRegularization/issues
 Depends: R (>= 2.10)
 Imports: quadprog
 License: GPL-2
 LazyData: true
-Packaged: 2015-03-01 08:47:42 UTC; Administrator
-Author: Yachen Yan [aut, cre]
-Maintainer: Yachen Yan <yanyachen21@gmail.com>
+RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-04-25 01:40:39 UTC; Administrator
+Author: YaChen Yan [aut, cre],
+  FangZhu Lin [aut]
+Maintainer: YaChen Yan <yanyachen21@gmail.com>

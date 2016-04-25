@@ -11,8 +11,8 @@
 #' Ind.Cov(cov.SAM)
 #' @export
 
-Ind.Cov <- function(sigma){
+Ind.Cov <- function(sigma) {
   COV <- diag(diag(cov(sigma)))
-  dimnames(COV) <- list(colnames(sigma),colnames(sigma))
+  dimnames(COV) <- list(colnames(sigma), colnames(sigma))
   return(COV)
 }

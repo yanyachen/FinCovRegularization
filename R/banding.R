@@ -13,11 +13,11 @@
 #' banding(cov.SAM, 7)
 #' @export
 
-banding <- function(sigma, k=0){
+banding <- function(sigma, k = 0) {
   p <- ncol(sigma)
-  for(i in 1:p){
-    for(j in 1:i){
-      if(abs(i-j)>k) sigma[i,j] <- 0
+  for (i in 1:p) {
+    for (j in 1:i) {
+      if (abs(i-j) > k) sigma[i,j] <- 0
       sigma[j,i] <- sigma[i,j]
     }
   }

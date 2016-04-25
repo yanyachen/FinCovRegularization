@@ -14,10 +14,10 @@
 #' soft.thresholding(cov.SAM, threshold = 0.001)
 #' @export
 
-soft.thresholding <- function(sigma, threshold=0.5){
-  sigma.threshold <- sigma*0
+soft.thresholding <- function(sigma, threshold = 0.5) {
+  sigma.threshold <- sigma * 0
   sigma.threshold <- sigma.threshold + diag(diag(sigma))
   sigma <- sigma - diag(diag(sigma.threshold))
-  sigma.threshold <- sigma.threshold + sign(sigma)*pmax(abs(sigma)-threshold,0)
+  sigma.threshold <- sigma.threshold + sign(sigma) * pmax(abs(sigma) - threshold, 0)
   return(sigma.threshold)
 }

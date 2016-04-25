@@ -33,45 +33,44 @@
 #' # Low dimension
 #' @export
 
-tapering.cv <- function(matrix, h=1/2, n.cv=10, norm="F", seed=142857){
-  if((norm %in% c("F","O","f","o"))==FALSE){
+tapering.cv <- function(matrix, h = 1/2, n.cv = 10, norm = "F", seed = 142857) {
+  if ((norm %in% c("F","O","f","o")) == FALSE) {
     stop("This function only support two norm: Frobenius and operator")
   }
   # Tapering Loss Function
-  tapering.loss <- function(mat1, mat2, l, h, norm){
+  tapering.loss <- function(mat1, mat2, l, h, norm) {
     cov.mat1 <- cov(mat1)
     cov.mat2 <- cov(mat2)
     mat.diff <- tapering(cov.mat1, l, h) - cov.mat2
-    if(norm %in% c("F","f")){
+    if (norm %in% c("F","f")) {
       loss <- F.norm2(mat.diff)
-    }else if(norm %in% c("O","o")){
+    } else if(norm %in% c("O","o")) {
       loss <- O.norm2(mat.diff)
     }
     return(loss)
   }
   # Numbers for Splitting
   N <- dim(matrix)[1]
-  n1 <- ceiling(N*(1-1/log(N)))
+  n1 <- ceiling(N*(1 - 1/log(N)))
   n2 <- floor(N/log(N))
   # Tapering Values for Cross-Validation
-  l.grid <- 0:(ncol(matrix)-1)
+  l.grid <- 0:(ncol(matrix) - 1)
   # Cross-Validation
-  loss.mat <- matrix(0, nrow=n.cv, ncol=length(l.grid))
-  for(i in 1:n.cv){
-    set.seed(seed+i)
-    index <- sample(1:N, size=n1, replace=FALSE)
+  loss.mat <- matrix(0, nrow = n.cv, ncol = length(l.grid))
+  for (i in 1:n.cv) {
+    set.seed(seed + i)
+    index <- sample(1:N, size = n1, replace = FALSE)
     mat1 <- matrix[index,]
     mat2 <- matrix[-index,]
-    loss.mat[i,] <- sapply(l.grid, FUN=tapering.loss, mat1=mat1, mat2=mat2, h=h, norm=norm)
+    loss.mat[i,] <- sapply(l.grid, FUN = tapering.loss, mat1 = mat1, mat2 = mat2, h = h, norm = norm)
   }
   loss.vec <- colMeans(loss.mat)
   l.opt <- l.grid[which.min(loss.vec)]
-  result <- list(regularization="Tapering",
-                 parameter.opt=l.opt,
-                 cv.error=loss.vec,
-                 n.cv=n.cv, norm=norm, seed=seed,
-                 h=h
-  )
+  result <- list(regularization = "Tapering",
+                 parameter.opt = l.opt,
+                 cv.error = loss.vec,
+                 n.cv = n.cv, norm = norm, seed = seed,
+                 h = h)
   class(result) <- "CovCv"
   return(result)
 }

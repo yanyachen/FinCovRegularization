@@ -22,34 +22,34 @@
 #' FundamentalFactor.Cov(assets,exposure=Indicator,method="WLS")
 #' @export
 
-FundamentalFactor.Cov <- function(assets, exposure, method="WLS"){
-  if((method %in% c("OLS","WLS"))==FALSE){
+FundamentalFactor.Cov <- function(assets, exposure, method = "WLS") {
+  if ((method %in% c("OLS","WLS")) == FALSE) {
     stop("This function only support two methods: OLS and WLS")
   }
   # Multivariate OLS regression to estimate OLS factor returns
-  F.hat.ols <- solve(crossprod(exposure))%*%t(exposure)%*%t(assets)
+  F.hat.ols <- solve(crossprod(exposure)) %*% t(exposure) %*% t(assets)
   # Compute matrix of OLS industry factor model residuals
-  E.hat.ols <- assets - t(exposure%*%F.hat.ols)
+  E.hat.ols <- assets - t(exposure %*% F.hat.ols)
   # Compute OLS residual variances from time series of errors
   diagD.hat.ols  <-  apply(E.hat.ols, 2, var)
-  if(method=="OLS"){
+  if (method == "OLS") {
     # Compute sample covariance matrix of OLS estimated factors
-    COV.OLS <- exposure%*%cov(t(F.hat.ols))%*%t(exposure) + diag(diagD.hat.ols)
-    dimnames(COV.OLS) <- list(colnames(assets),colnames(assets))
+    COV.OLS <- exposure %*% cov(t(F.hat.ols)) %*% t(exposure) + diag(diagD.hat.ols)
+    dimnames(COV.OLS) <- list(colnames(assets), colnames(assets))
     return(COV.OLS)
-  }else if(method=="WLS"){
+  } else if (method == "WLS") {
     # Multivariate WLS regression to estimate WLS factor returns
     Dinv.hat.ols <- diag(diagD.hat.ols^(-1))
     # Compute factor mimicking portfolios weights matrix
-    H.hat <- solve(t(exposure)%*%Dinv.hat.ols%*%exposure)%*%t(exposure)%*%Dinv.hat.ols
-    F.hat.wls <- as.matrix(assets)%*%t(H.hat)
+    H.hat <- solve(t(exposure) %*% Dinv.hat.ols %*% exposure) %*% t(exposure) %*% Dinv.hat.ols
+    F.hat.wls <- as.matrix(assets) %*% t(H.hat)
     # Compute matrix of WLS industry factor model residuals
-    E.hat.wls <- assets - t(exposure%*%t(F.hat.wls))
+    E.hat.wls <- assets - t(exposure %*% t(F.hat.wls))
     # Compute OLS residual variances from time series of errors
     diagD.hat.wls  <-  apply(E.hat.wls, 2, var)
     # Compute sample covariance matrix of WLS estimated factors
-    COV.WLS <- exposure%*%cov(F.hat.wls)%*%t(exposure) + diag(diagD.hat.wls)
-    dimnames(COV.WLS) <- list(colnames(assets),colnames(assets))
+    COV.WLS <- exposure %*% cov(F.hat.wls) %*% t(exposure) + diag(diagD.hat.wls)
+    dimnames(COV.WLS) <- list(colnames(assets), colnames(assets))
     return(COV.WLS)
   }
 }
