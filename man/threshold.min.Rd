@@ -15,7 +15,7 @@ threshold.min(sigma, method = "hard")
 minimum constant for thresholding
 }
 \description{
-This function is for determining the minimum constant in the threshold 
+This function is for determining the minimum constant in the threshold
 that guarantees the positive definiteness of the estimator.
 }
 \references{

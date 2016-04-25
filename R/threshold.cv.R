@@ -1,27 +1,27 @@
 #' @title Select Tuning Parameter for Thresholding Covariance Matrix by CV
 #'
 #' @description
-#' Apply K-fold cross-validation for selecting tuning parameters for 
+#' Apply K-fold cross-validation for selecting tuning parameters for
 #' thresholding covariance matrix using grid search strategy
 #'
 #' @details
-#' For cross-validation, this function split the sample randomly into 
+#' For cross-validation, this function split the sample randomly into
 #' two pieces of size n1 = n-n/log(n) and n2 = n/log(n), and repeat this k times
 #'
-#' @param matrix a N*p matrix, N indicates sample size 
+#' @param matrix a N*p matrix, N indicates sample size
 #'   and p indicates the dimension
 #' @param method thresholding method, "hard" or "soft"
-#' @param thresh.len the number of thresholding values tested in 
+#' @param thresh.len the number of thresholding values tested in
 #'   cross-validation, the thresholding values will be a sequence of
 #'   \code{thresh.len} equally spaced values from minimum threshold constant
 #'   to largest covariance in sample covariance matrix
 #' @param n.cv times that cross-validation repeated, the default number is 10
-#' @param norm the norms used to measure the cross-validation errors, 
+#' @param norm the norms used to measure the cross-validation errors,
 #'   which can be the Frobenius norm "F" or the operator norm "O"
 #' @param seed random seed, the default value is 142857
-#' @return An object of class "CovCv" containing the cross-validation's result 
+#' @return An object of class "CovCv" containing the cross-validation's result
 #'   for covariance matrix regularization, including:
-#'   \item{regularization}{regularization method, which is "Hard Thresholding" 
+#'   \item{regularization}{regularization method, which is "Hard Thresholding"
 #'     or "Soft Thresholding"}
 #'   \item{parameter.opt}{selected optimal parameter by cross-validation}
 #'   \item{cv.error}{the corresponding cross-validation errors}
@@ -32,11 +32,12 @@
 #' @references "High-Dimensional Covariance Estimation" by Mohsen Pourahmadi
 #' @examples
 #' data(m.excess.c10sp9003)
-#' retcov.cv <- threshold.cv(m.excess.c10sp9003, method = "hard", 
+#' retcov.cv <- threshold.cv(m.excess.c10sp9003, method = "hard",
 #'                           thresh.len = 20, n.cv = 10, norm = "F", seed = 142857)
 #' summary(retcov.cv)
 #' plot(retcov.cv)
 #' # Low dimension
+#' @importFrom stats cov
 #' @export
 
 threshold.cv <- function(matrix, method = "hard", thresh.len = 20, n.cv = 10, norm = "F", seed = 142857) {

@@ -1,13 +1,13 @@
 #' @title Covariance Matrix Estimation by Fundamental Factor Model
-#' 
+#'
 #' @description
-#' Estimate covariance matrix by fitting a fundamental factor model 
+#' Estimate covariance matrix by fitting a fundamental factor model
 #' using OLS or WLS regression
 #'
-#' @param assets a N*p matrix of asset returns, N indicates sample size 
+#' @param assets a N*p matrix of asset returns, N indicates sample size
 #'   and p indicates the dimension of asset returns
-#' @param exposure a p*q matrix of exposure indicator for the 
-#'   fundamental factor model, p corresponds to the dimension of 
+#' @param exposure a p*q matrix of exposure indicator for the
+#'   fundamental factor model, p corresponds to the dimension of
 #'   asset returns, q indicates the number of fundamental industries
 #' @param method a character, indicating regression method: "OLS" or "WLS"
 #' @return an estimated p*p covariance matrix
@@ -20,6 +20,8 @@
 #' Indicator[c("F","GM"),"Auto"] <- 1
 #' Indicator[c("BP","CVX","RD","XOM"),"Oil"] <- 1
 #' FundamentalFactor.Cov(assets,exposure=Indicator,method="WLS")
+#' @importFrom stats cov
+#' @importFrom stats var
 #' @export
 
 FundamentalFactor.Cov <- function(assets, exposure, method = "WLS") {

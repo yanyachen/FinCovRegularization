@@ -13,7 +13,7 @@ RiskParity(cov.mat)
 a numerical vector containing the estimated portfolio weights
 }
 \description{
-Computing a Risk Parity portfolio weights from the estimated 
+Computing a Risk Parity portfolio weights from the estimated
 covariance matrix of return series.
 }
 \examples{

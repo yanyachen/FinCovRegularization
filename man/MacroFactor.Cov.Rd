@@ -7,17 +7,17 @@
 MacroFactor.Cov(assets, factor)
 }
 \arguments{
-\item{assets}{a N*p matrix of asset returns, N indicates sample size 
+\item{assets}{a N*p matrix of asset returns, N indicates sample size
 and p indicates the dimension of asset returns}
 
-\item{factor}{a numerical vector of length N, or a N*q matrix of 
+\item{factor}{a numerical vector of length N, or a N*q matrix of
 macroeconomic factor(s), q indicates the dimension of factors}
 }
 \value{
 an estimated p*p covariance matrix
 }
 \description{
-Estimate covariance matrix by fitting a macroeconomic factor model 
+Estimate covariance matrix by fitting a macroeconomic factor model
 using time series regression
 }
 \examples{

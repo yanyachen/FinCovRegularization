@@ -1,15 +1,16 @@
 #' @title Risk Parity Portfolio
 #'
 #' @description
-#' Computing a Risk Parity portfolio weights from the estimated 
+#' Computing a Risk Parity portfolio weights from the estimated
 #' covariance matrix of return series.
-#' 
+#'
 #' @param cov.mat an estimated p*p covariance matrix
 #' @return a numerical vector containing the estimated portfolio weights
 #' @examples
 #' data(m.excess.c10sp9003)
 #' assets <- m.excess.c10sp9003[,1:10]
 #' RiskParity(cov(assets))
+#' @importFrom stats optim
 #' @export
 
 RiskParity <- function(cov.mat) {

@@ -9,6 +9,7 @@
 #' data(m.excess.c10sp9003)
 #' cov.SAM <- cov(m.excess.c10sp9003)
 #' Ind.Cov(cov.SAM)
+#' @importFrom stats cov
 #' @export
 
 Ind.Cov <- function(sigma) {

@@ -7,11 +7,11 @@
 FundamentalFactor.Cov(assets, exposure, method = "WLS")
 }
 \arguments{
-\item{assets}{a N*p matrix of asset returns, N indicates sample size 
+\item{assets}{a N*p matrix of asset returns, N indicates sample size
 and p indicates the dimension of asset returns}
 
-\item{exposure}{a p*q matrix of exposure indicator for the 
-fundamental factor model, p corresponds to the dimension of 
+\item{exposure}{a p*q matrix of exposure indicator for the
+fundamental factor model, p corresponds to the dimension of
 asset returns, q indicates the number of fundamental industries}
 
 \item{method}{a character, indicating regression method: "OLS" or "WLS"}
@@ -20,7 +20,7 @@ asset returns, q indicates the number of fundamental industries}
 an estimated p*p covariance matrix
 }
 \description{
-Estimate covariance matrix by fitting a fundamental factor model 
+Estimate covariance matrix by fitting a fundamental factor model
 using OLS or WLS regression
 }
 \examples{
