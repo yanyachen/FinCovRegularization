@@ -1,8 +1,9 @@
 # FinCovRegularization
 
-[![Build Status](https://travis-ci.org/yanyachen/FinCovRegularization.svg)](https://travis-ci.org/yanyachen/FinCovRegularization)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/FinCovRegularization)](http://cran.r-project.org/package=FinCovRegularization)
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/FinCovRegularization)](http://cran.rstudio.com/web/packages/FinCovRegularization/index.html)
+[![Build Status](https://travis-ci.org/yanyachen/FinCovRegularization.svg)](https://travis-ci.org/yanyachen/FinCovRegularization)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/yanyachen/FinCovRegularization?branch=master&svg=true)](https://ci.appveyor.com/project/yanyachen/FinCovRegularization)
 
 Covariance Matrix Estimation and Regularization for Finance  
 
